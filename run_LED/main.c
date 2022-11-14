@@ -22,6 +22,6 @@ int main() {
 
       digitalWrite(LED1,LOW);		/* write high on GPIO */ 
       digitalWrite(LED2,HIGH);		/* write high on GPIO */ 
-      delay(1000);
+      delay(3000);
     }
 }
