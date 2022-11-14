@@ -12,7 +12,7 @@ int main() {
   printf ("Start:\n");
     wiringPiSetup();	/* initialize wiringPi setup */
 
-    pinMode(enA,OUTPUT);	/*set GPIO as output */
+    pinMode(enA,PWM_OUTPUT);	/*set GPIO as output */
     pinMode(in1,OUTPUT);
     pinMode(in2,OUTPUT);
     
@@ -24,7 +24,8 @@ int main() {
       digitalWrite(in2, LOW);
       for (size_t i = 0; i < 1023; i++)
       {
-        analogWrite(enA, i);
+        pwmWrite(enA, i);
+       // analogWrite(enA, i);
         delay(5);
       }
       
