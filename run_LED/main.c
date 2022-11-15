@@ -19,16 +19,18 @@ int main() {
     while (1)
     {
 
-      //Forward in1 high and in2 low 
+      //Forward in1 high and in2 low ./
       digitalWrite(in1, HIGH);
       digitalWrite(in2, LOW);
-      for (size_t i = 0; i < 1023; i++)
+      
+      pwmWrite(enA, 1000);
+      
+      /*for (size_t i = 0; i < 1023; i++)
       {
         pwmWrite(enA, i);
-       // analogWrite(enA, i);
         delay(5);
       }
-      
+      */
 
     }
 }
