@@ -23,14 +23,12 @@ int main() {
       digitalWrite(in1, HIGH);
       digitalWrite(in2, LOW);
       
-      pwmWrite(enA, 1000);
       
-      /*for (size_t i = 0; i < 1023; i++)
+      for (size_t i = 0; i < 1023; i++)
       {
         pwmWrite(enA, i);
         delay(5);
       }
-      */
 
     }
 }
