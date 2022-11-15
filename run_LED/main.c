@@ -24,13 +24,17 @@ int main() {
       digitalWrite(in2, LOW);
       
       
-      for (size_t i = 0; i < 1023; i++)
+      for (size_t i = 120; i < 1023; i++)
       {
         pwmWrite(enA, i);
         delay(5);
       }
 
-      for (size_t i = 1023; i > 0; i--)
+        //Change direction
+        digitalWrite(in1, LOW);
+        digitalWrite(in2, HIGH);
+
+      for (size_t i = 1023; i > 120; i--)
       {
         pwmWrite(enA, i);
         delay(5);
