@@ -30,5 +30,10 @@ int main() {
         delay(5);
       }
 
+      for (size_t i = 1023; i > 0; i--)
+      {
+        pwmWrite(enA, i);
+        delay(5);
+      }
     }
 }
