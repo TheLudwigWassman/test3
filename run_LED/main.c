@@ -14,24 +14,15 @@ int enB = 23; //BCM 13 || Pysical 33
 int inB1 = 0; //BCM 17 || Pysical 11
 int inB2 = 2; //BCM 27 || Pysical 13
 
+void config(void);
+
 int main() {
 
+config();
   printf ("Start:\n");
-    wiringPiSetup();	/* initialize wiringPi setup */
-
-    //Motor 1
-    pinMode(enA,PWM_OUTPUT);	/*set GPIO as output */
-    pinMode(inA1,OUTPUT);
-    pinMode(inA2,OUTPUT);
-
-    //Motor 2
-    pinMode(enB,PWM_OUTPUT);	/*set GPIO as output */
-    pinMode(inB1,OUTPUT);
-    pinMode(inB2,OUTPUT);
     
     while (1)
     {
-
       //Direction ONE M1
       digitalWrite(inA1, HIGH);
       digitalWrite(inA2, LOW);
@@ -39,8 +30,8 @@ int main() {
       //Direction ONE M2
       digitalWrite(inB1, HIGH);
       digitalWrite(inB2, LOW);
-      
-      
+
+
       for (size_t i = 120; i < 1023; i++)
       {
         pwmWrite(enA, i);
@@ -64,3 +55,20 @@ int main() {
       }
     }
 }
+
+
+void config(void)
+{
+    wiringPiSetup();	/* initialize wiringPi setup */
+
+    //Motor 1
+    pinMode(enA,PWM_OUTPUT);	/*set GPIO as output */
+    pinMode(inA1,OUTPUT);
+    pinMode(inA2,OUTPUT);
+
+    //Motor 2
+    pinMode(enB,PWM_OUTPUT);	/*set GPIO as output */
+    pinMode(inB1,OUTPUT);
+    pinMode(inB2,OUTPUT);
+}
+
