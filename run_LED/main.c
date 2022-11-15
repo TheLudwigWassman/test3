@@ -32,7 +32,7 @@ config();
       digitalWrite(inB2, LOW);
 
 
-      for (size_t i = 120; i < 1023; i++)
+      for (size_t i = 200; i < 1023; i++)
       {
         pwmWrite(enA, i);
         pwmWrite(enB, i);
@@ -44,10 +44,10 @@ config();
         digitalWrite(inA2, HIGH);
 
         //Change direction M2
-        digitalWrite(inA1, HIGH);
-        digitalWrite(inA2, LOW);
+        digitalWrite(inB1, LOW);
+        digitalWrite(inB2, HIGH);
 
-      for (size_t i = 1023; i > 120; i--)
+      for (size_t i = 1023; i > 200; i--)
       {
         pwmWrite(enA, i);
         pwmWrite(enB, i);
